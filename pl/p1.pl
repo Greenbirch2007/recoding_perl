@@ -1,4 +1,12 @@
 #!/usr/bin/perl
- 
-# 输出 "Hello, World"
-print "Hello, world\n"
+
+
+
+$str = "welcome \Usss\E.com!";
+print("$str\n");
+
+
+$str = "\QWelcom to runno's fammlsd.";
+print("$str\n");
+
+
