@@ -1,12 +1,25 @@
 #!/usr/bin/perl
+ 
+ 
+%data = ("a" => 45, -google => 30, -runoob => 40);
+ 
+
+@key = keys %data;
+
+$size = @key;
+print("$size \n");
 
 
+$data{"ff"} = "ff.com";
 
-$str = "welcome \Usss\E.com!";
-print("$str\n");
+@key = keys %data;
+
+$size = @key;
+print("$size \n");
 
 
-$str = "\QWelcom to runno's fammlsd.";
-print("$str\n");
+delete $data{-google};
+@key = keys %data;
 
-
+$size = @key;
+print("$size \n");
