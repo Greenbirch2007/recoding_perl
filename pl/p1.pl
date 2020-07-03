@@ -1,25 +1,15 @@
 #!/usr/bin/perl
  
- 
-%data = ("a" => 45, -google => 30, -runoob => 40);
- 
 
-@key = keys %data;
+$a=0;
+$b=0;
 
-$size = @key;
-print("$size \n");
-
-
-$data{"ff"} = "ff.com";
-
-@key = keys %data;
-
-$size = @key;
-print("$size \n");
-
-
-delete $data{-google};
-@key = keys %data;
-
-$size = @key;
-print("$size \n");
+while($a<3){
+    $b= 0;
+    while($b<3){
+        print("a=$a,b=$b\n");
+        $b=$b+1;
+    }
+    $a= $a+1;
+    print("a=$a\n\n");
+}

@@ -401,6 +401,55 @@ values %HASH
 
 
 
+数字０，字符串'０'，“”，空list(),undef为false
+其他均为true
+!true , not true 为false
 
+1. if
+2. if ...else
+3. if ...elsif
+
+if 语句后面可以跟上０个或１个else语句，danshi elsif后面
+必须有else语句
+if 语句后可以跟上0个或1个elsif语句，但它们必须
+写在else语句前
+
+一个unless语句由一个布尔表达式后跟一个或多个语句组成
+
+
+4. unless与if正好相反
+5. unless...else语句if ..else正好　相反　
+6. unless..elsif ..else 与if的版本正好相反 注意elsif,else还是true时执行
+7. switch语句
+
+一个switch语句允许测试一个变量等于多个值时的情况
+每个值都称为一个case,且被测试的变量都会对每个switch case进行检查
+switch　case 执行基于Switch模块，
+
+switch语句的括号中可以使用任意类型的标量参数
+在一个switch中可以有任意数量的case语句
+每个case后跟一个要比较的的值和一个包好
+case语句后的标量会与switch语句的标量进行
+比较，判断是否相等
+当测试的变量等于case中的常量时，case 后
+跟的语句将被执行，直到遇到break语句位置
+switch语句可以有可选的else,该语句在
+最后面，该语句在所有case不匹配的情况下还自信能够
+switch语句可以有一个可选的else，该语句
+在最后，该语句在所有case不匹配的情况执行
+当匹配case后，会执行case语句块代码
+执行后跳出switch语句
+当匹配case后没如果我需要继续执行接下来的
+case语句，则添加next语句
+
+三元运算?:
+
+
+exp1 ? expr2:expr3
+
+正左否右
+
+
+ 
 
 
