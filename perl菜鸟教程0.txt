@@ -1,4 +1,4 @@
-perl程序声明与语句组成，程序自上而下，包含了循环，条件控制，每个越剧
+﻿perl程序声明与语句组成，程序自上而下，包含了循环，条件控制，每个越剧
 以分号；结束
 
 
@@ -451,5 +451,77 @@ exp1 ? expr2:expr3
 
 
  
+
+
+
+
+$c += $a;
+$c -= $a;
+$c *= $a;
+$c /= $a;
+$c %/= $a;
+$c **= $a;
+
+and
+&&
+or
+||
+not
+
+yin
+q{} ''
+qq{} ""
+qx{} ``
+
+.  "run"."dd"
+
+
+x ('-'x3) ---
+(2..5) (2,3,4,5)
+
+$a =10,$a++ 11
+->
+
+$a=10, $a-- 9
+
+$obj->$a ,d
+
+time()
+localtime()
+gmtime()
+
+sec
+min
+hour
+mday
+mon
+year
+wday
+yday
+isdst
+
+strftime()
+
+%a
+%A
+%b
+
+
+sub subroutine{
+	statetime;
+}
+
+
+subroutine(paratimet);
+
+
+@_
+$_[0]
+$_[1]
+
+
+@_ ----@
+$_[]
+
 
 

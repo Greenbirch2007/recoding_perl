@@ -1,15 +1,18 @@
 #!/usr/bin/perl
  
 
-$a=0;
-$b=0;
 
-while($a<3){
-    $b= 0;
-    while($b<3){
-        print("a=$a,b=$b\n");
-        $b=$b+1;
-    }
-    $a= $a+1;
-    print("a=$a\n\n");
-}
+
+my $datestring = localtime(time);
+print("$datestring");
+
+
+print "\n";
+($sec,$min,$hour,$mday,$mon, $year,$wday,$yday,$isdst) = localtime(time);
+
+
+printf("%d-%d-%d %d:%d:%d",$year+1990,$mon+1,$mday,$hour,$min,$sec);
+
+
+
+print "\n";
