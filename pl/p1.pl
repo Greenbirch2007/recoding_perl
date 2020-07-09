@@ -1,18 +1,8 @@
-#!/usr/bin/perl
+$i = 1; 
+print "包名 : " , __PACKAGE__ , " $i\n"; 
  
-
-
-
-my $datestring = localtime(time);
-print("$datestring");
-
-
-print "\n";
-($sec,$min,$hour,$mday,$mon, $year,$wday,$yday,$isdst) = localtime(time);
-
-
-printf("%d-%d-%d %d:%d:%d",$year+1990,$mon+1,$mday,$hour,$min,$sec);
-
-
-
-print "\n";
+package Foo;
+#  Foo 包
+$i = 10; 
+print "包名 : " , __PACKAGE__ , " $i\n"; 
+ 
