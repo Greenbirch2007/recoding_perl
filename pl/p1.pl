@@ -1,8 +1,6 @@
-$i = 1; 
-print "包名 : " , __PACKAGE__ , " $i\n"; 
+=begin html
+=encoding utf-8
  
-package Foo;
-#  Foo 包
-$i = 10; 
-print "包名 : " , __PACKAGE__ , " $i\n"; 
+=head1 菜鸟教程
  
+=cut
