@@ -1,0 +1,102 @@
+
+
+chapter 1
+
+
+perl 90%文字  10%的事务
+
+
+CPAN 
+https://www.cpan.org/
+https://www.cpan.org/modules/01modules.index.html
+
+https://www.cpan.org/modules/by-category/
+
+
+chapter 2
+
+%
+"a"."b"
+
+"b" x6
+
+use warings;
+
+variable  $variable
+
+
+
+$name
+$Nam
+
+
+$fred = 3;
+$a += 5;
+print
+
+$line = <STDIN>;
+if ($line eq "\n"){
+	print "that was just a blank line!\n";
+}else{
+	print "that line of input was:$line";
+	}
+	
+
+chomp()
+
+undef 零活空字符串
+defined
+
+chapter 3
+
+
+$--list--array
+
+列表指的是标量的有序集合，数组是存储列表的集合
+列表指的是数据，数组指的是变量
+
+数组或列表中的每个元素(element)都是单独的标量变量，拥有独立的标量只
+数组或列表的都一个元素总是第0个元素
+
+数组和列表和包含任意多个元素。最少的情况下是没有任何元素，最多的情况是把可用的内存全部填满
+
+list literal
+
+
+
+(1,2,3)
+(1,2,3,)
+("fred",4.5)
+()
+(1..100)
+..  range operator
+qw quoted word 
+
+qw ! daf !
+qw()
+qw[]
+delimiter
+
+@
+
+pop,push
+
+stack
+
+void context
+
+
+常把数组当队列(queue)来弄，一头加入一头驱除
+
+pop,push 对数组尾部操作
+
+
+shift,unshift对数组头部处理
+
+splice 对数组特定元素操作
+splice(数组，开始元素索引，长度，替换的列表)
+
+bedrock数组
+
+p79
+
