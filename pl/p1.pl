@@ -1,5 +1,7 @@
 
 
-
-@rocks = qw (dino fred barray baba );
-print "sss\@bedrock.edu \n";
+@fred = 6..10;
+@barney = reverse(@fred);
+foreach (@barney){
+	print "$_\n";
+	}

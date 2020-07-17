@@ -98,5 +98,24 @@ splice(数组，开始元素索引，长度，替换的列表)
 
 bedrock数组
 
-p79
 
+内插数组中的某个元素时，会被替换成该元素的hi
+
+索引表达式(index expression)
+
+foreach控制结构
+
+foreach $rock(qw\ bedrock slate lava /){
+	print "one rock is $rock.\n"
+
+perl最喜欢用的默认变量:$_
+
+默认会自动打印$_
+
+reverse操作符
+
+@fred = reverse @fred;
+
+sort操作符
+
+p81
