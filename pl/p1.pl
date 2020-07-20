@@ -1,14 +1,13 @@
 
-use 5.010;
-running_sum(5,6);
-running_sum(1..3);
-running_sum(4);
-sub running_sum{
-	state $sum = 0;
-	state @numbers;
-	foreach my $number (@_){
-		push @numbers,$nubmer;
-		$sum += $number;
-		}
-		say "The sum of (@numbers) is $sum";
-		}
+use CGI qw(:all);
+
+print header(),
+	start_html("this is the page title"),
+	h1("Input parameters");
+	
+my $list_items;
+foreach my $param (param()){
+	$list_items .= li("$param:".param($param));
+	}
+print ul($list_items);
+print end_html();

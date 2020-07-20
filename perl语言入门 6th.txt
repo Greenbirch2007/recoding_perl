@@ -228,4 +228,216 @@ I/O是80%的应用
 $line = <STDIN>;
 chomp
 
-p106
+文件句柄是程序里代表perl进程与外界之间的I\O联系的名称
+
+6个特殊文件句柄名
+STDIN,STDOUT,STDERR,DATA,ARGV,ARGVOUT
+
+打开文件句柄
+
+以二进制方式读写文件句柄
+
+关闭我呢间句柄
+
+close BEROCK'
+
+用die处理致命错误
+
+die函数会输出你指定的信息到转为这个类信息准备的标准错误流中，并且让你的
+程序立刻终止并返回不为零的退出吗
+
+用warn送出警告信息
+
+使用文件句柄
+
+改变默认的文件输出句柄
+重新打开标准文件句柄
+用say来输出
+
+标量标量中的文件句柄
+
+成为标量变量后，文件句柄就可以作为子程序的参数传递，或放在数组，哈希中排序，
+或严格控制其作用于
+
+chapter 6 哈希
+
+使用哈希的场景
+1.按名字找姓
+2.按主机名找IP地址
+3.按ip地址找主机名
+4. 按单词统计其出现次数
+5. 按照用户名统计每个人使用的磁盘块数量
+
+访问哈希元素
+
+$hash{$some_key}
+
+访问整个哈希 %
+
+
+哈希赋值
+
+my %new_hash = %old_hash;
+
+哈希函数
+keys 和values函数
+
+my %hash =('a'=>1,'b'=>2,'c'=>3);
+my @k = keys %hash;
+my @v = values %hash;
+
+my $count = keys %hash;
+
+if (%hash){
+	print "That was a true value!\n";
+	}
+	
+each 函数，以包含两个元素的列表的形式返回键值对
+
+while (($keys,$value) = each %hash){
+	print "$keys => $value\n";
+	}
+
+哈希的典型应用
+
+$books{'fred'} =3;
+$books{'wilam'}=1;
+
+if ($books{$someone}){
+	print "$someone has at least one book checked out.\n";
+	}
+	
+	
+$books{"barnery"} =0;
+$books{"sd"}= undef;
+
+
+exists函数
+
+检查哈希中是否存在某个键
+exists能返回布尔值，分别表示键存在与否，和键对应的值无关
+
+
+if (exists %books{"di"}){
+	print "";
+	}
+	
+delete 函数，以包含两个元素的列表的形式返回键值对
+
+my $person = "betty";
+delete $books{$person};
+
+哈希元素内插
+可以将单一哈希元素内插到双引号引起的字符串
+
+foreach $person (sort keys %books){
+	if ($books{$person}){
+		print "$person has $books{$person} items \n";
+		}
+		}
+		
+%ENV哈希
+
+print "PATH is $ENV{PATH}\n";
+
+chapter7 
+
+漫游正则表达式王国
+
+Unicode属性
+p{PROPERTY}
+
+chapter8 用正则表达式进行匹配
+用m//匹配
+模式匹配修饰符
+
+用/i进行大小写无关的匹配
+
+用/s匹配任意字符
+
+用/x加入空白符
+
+组合选项修饰符
+
+if (/barnery/six){
+	}
+	
+ASCII,Unicode,locale
+选择一种字符解释方式
+/a ASCII
+/u Unicode
+/l locale
+
+
+use 5.014
+
+
+/\w+/a
+/\w+/U
+
+锚位
+
+m{\Ahttps:?://}if
+
+
+绑定操作符=~
+
+默认情况下模式匹配的操作对象是$_
+
+=~，拿右边的模式来匹配左边的字符串
+
+模式中的内插
+捕捉变量
+
+捕获变量的存续期
+
+?:
+
+命名捕获
+
+自动捕获变量
+
+通用量词
+
+(?:...)()
+
+chapter 9 用正则处理文本
+
+用s///进行替换
+用/g进行全局替换
+不同的定界符
+可用替换修饰符
+绑定操作符
+split操作符
+join函数
+列表上下文中的m//
+
+chapter10
+其他控制结构
+unless
+until
+elsif子句
+last
+next
+redo
+条件操作符?:
+AND && OR  ||
+
+chapter11 模块
+
+
+安装模块
+
+安装到自己的目录
+
+File::Basename模块
+
+use File::Basename模块
+
+File:Spec
+Path::Class模块
+
+CGI.pm模块
+
+p227
+	
