@@ -1,0 +1,7 @@
+查看已安装的perl模块
+
+weixin_34208283 2017-11-21 17:22:00  380  收藏
+版权
+find `perl -e 'print "@INC" '` -name "*.pm" > perlmodules.txt
+
+然后下载perlmodules.txt来看

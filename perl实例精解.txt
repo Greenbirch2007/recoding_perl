@@ -1,0 +1,57 @@
+
+
+chapter 1 实用摘要和报表语言
+
+
+perlbot
+perlbug
+perldiag
+perldsc
+perlform
+perlfunc
+perlipc
+perllol
+perlmod
+perlobj
+perlop
+perlre
+perlref
+perlsock
+perlstyle
+perlsub
+perltie
+perltrap
+perlvar
+
+
+chapter 2
+
+标量 $
+
+数组 @ 
+pop,push
+shift,unshift
+splice,sort
+
+哈希 %
+keys,values,
+each,delete
+
+预定义变量
+
+$_
+$.
+$@
+$!
+$0
+$$
+
+常量(文本值) contant
+数字
+字符串与引号
+引用替换字符
+运算符
+条件判断
+
+p20
+非常全面！

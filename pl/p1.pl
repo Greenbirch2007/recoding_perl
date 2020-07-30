@@ -1,3 +1,18 @@
 
+for my $result (@results){
+    print_sep();
+    print $result;
 
-print ((2+2) * (6-2)/3);
+}
+
+while ($min < $max){
+    my $try = ($max- $min)/2;
+    if ($value[$try] <$target){
+        $max = $try;
+
+    }
+    else{
+        $min = $try;
+        
+    }
+}

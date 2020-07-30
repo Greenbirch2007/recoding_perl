@@ -89,8 +89,6 @@ void context
 常把数组当队列(queue)来弄，一头加入一头驱除
 
 pop,push 对数组尾部操作
-
-
 shift,unshift对数组头部处理
 
 splice 对数组特定元素操作
@@ -111,15 +109,10 @@ foreach $rock(qw\ bedrock slate lava /){
 perl最喜欢用的默认变量:$_
 
 默认会自动打印$_
-
 reverse操作符
-
 @fred = reverse @fred;
-
 sort操作符
-
 each 操作符
-
 each只能用于提取哈希的k-v对
 
 如果不用each来实现就得自己根据
@@ -439,5 +432,74 @@ Path::Class模块
 
 CGI.pm模块
 
-p227
+测试同一个文件的多项属性
+
+if （-人$file and -w $file）{}
+虚拟文件句柄_
+
+stat和lstat函数
+$dev,$ino
+
+$mode
+$nlink
+$uid,$gid
+$size
+$atime,$mtime,$ctime
+localtime函数
+
+
+目录句柄
+用index查找子字符串
+用substr操作子字符串
+用sprintf格式化字符串
+用sprintf格式化金额数组
+
+智能匹配与given-when结构
+
+system函数
+
+避免使用shell
+exec函数
+
+
+用反引号捕获输出结果
+在列表上下文中使用反引号
+
+用IPC::System::Simple执行外部进程
+通过文件句柄执行外部进程
+用fork进行深入和复杂的工作
+
+发送及接收信号
+
+用eval捕捉错误
+
+用die抛出异常，然后用eval捕捉隐藏你
+
+Try::Tiny
+
+
+use Try:Tiny
+try{
+ ...;
+ }
+ catch {
+ ...;
+ }
+ finally{
+	...;
+	}
+	
+autodie
+
+用grep筛选列表
+
+grep操作在标量上下文中返回的是符合过滤条件的严肃个书
+
+用map把列表元素变形
+
+
+List::Until
+
+
+
 	
