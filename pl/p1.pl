@@ -1,18 +1,8 @@
 
-for my $result (@results){
-    print_sep();
-    print $result;
 
-}
+use strict 'subs';
 
-while ($min < $max){
-    my $try = ($max- $min)/2;
-    if ($value[$try] <$target){
-        $max = $try;
-
-    }
-    else{
-        $min = $try;
-        
-    }
+my @sqrt = map {sqrt $_} 0..100;
+for my $N (2,3,6,46){
+    print "$sqrt[N] \n";
 }
