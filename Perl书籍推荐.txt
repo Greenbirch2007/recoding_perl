@@ -1,0 +1,19 @@
+Perl书籍推荐
+Perl书籍下载 密码：kkqx
+
+下面是一些我学习Perl过程中读过完整的或部分章节的觉得好的书。
+
+入门级别1：《Perl语言入门》即小骆驼
+入门级别2：《Intermediate Perl》即羊驼
+入门后复习：《beginning Perl》
+系统性学习和进阶：《Pro Perl》（目前在读，是我整理、完善Perl的最佳书籍）
+Perl编码技巧：《Perl高效编程》(英文版Effective Perl Programming)
+关于《精通perl》和《Perl语言编程》（即羊驼一家和大骆驼），虽然网上评价很高，但是觉得始终不适合，或者说不适合中国人。精通Perl是作者(brian d foy)以第一人称来描述他怎么理解Perl的，Perl语言编程是Larry Wall自己编写的书籍，也许他智商太高，书中很多地方的跳跃性都非常大。
+
+然后是某个方向的书籍，比如http客户端《perl lwp》(看了一半，作者的写作方式非常友好)、数据库操作《Programming the Perl DBI》（有中文版）。
+
+
+作者: 骏马金龙
+链接: https://www.junmajinlong.com/perl/index/
+来源: 骏马金龙
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
