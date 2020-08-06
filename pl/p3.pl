@@ -1,15 +1,4 @@
-#!/usr/bin/perl
+my %hash = qw/1 one 2 two 3 three/;
 
+print 'false' unless defined($hash{0});
 
-chomp(my $input =<STDIN>);
-if ($input<50){
-    my $total = 1;
-    for ($i=1; $i<$input; $i++) {
-        $total *= $i;
-        
-    }
-    print $total;
-
-}else{
-    print "too big";
-}
