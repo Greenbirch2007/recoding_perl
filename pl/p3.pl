@@ -1,4 +1,11 @@
-my %hash = qw/1 one 2 two 3 three/;
+#!/usr/bin/perl
 
-print 'false' unless defined($hash{0});
 
+use strict;
+chomp(my $input = <STDIN>);
+($input > 60)? print "pass":print "failed";
+# if ($input < 60) {
+# print "不及格";
+# } else {
+# print "及格";
+# }
