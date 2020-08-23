@@ -1,0 +1,7 @@
+my $str="1,000,000,345,678";
+#字符bai串按照逗号分割du
+my @arr = split(/,/,$str);
+#把分割后的字符串连接起来
+my $total = join "",@arr;
+#打印结果zhi
+print $total,"\n";

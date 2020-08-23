@@ -624,3 +624,271 @@ open File, "ee.txt" or die "开启文件失败: $!";
 while (<FILE>) {
     print $_;
 }
+
+11.文件系统
+
+运用文件句柄实际上操作整个系统的目录和文件
+
+11.1 文件测试
+
+
+
+use strict;
+my $logfile = "D:\\Python3.8\\pythonw1";#先指定文件到变量 $logfile
+if (-e $logfile){#判断文件是否存在
+open LOG,$logfile or die "$!"; #开启文件句柄
+my $line_num = 1;
+while (<LOG>) {
+    print "$line_num\t$_\n";
+    $line_num++
+}
+
+}else{
+    print "文件不存在\n";
+}
+
+-e确定文件是否存在
+-A  文件上次读写至今的时间
+-B  文件被判断为二进位档
+-C  文件的 inode 被更改至今的时间
+-M  文件上次修改至今的时间
+-O  目前实际使用者是否为该文件或目录的拥有者
+-R  目前实际的使用者具有读的权限
+-S  文件句柄是否为 socket
+-T  文件判断为文字档
+-W  目前实际的使用者具有写的权限
+-X  目前实际的使用者具有执行的权限
+-c  字符型文件
+-e  检查文件或目录是否存在
+-f  判断文件是否为文字档
+-g  文件或目录具有 setgid 属性
+-k  文件或目录设定了 sticky 位元
+-l  文件句柄是一个符号连结
+-o  目前的使用者是否为该文件或目录的拥有者
+-r  目前的使用者具有读的权限
+-s  文件或目录存在而且有内容
+-t  文件句柄是 TTY 装置
+-u  文件或目录具有 setuid 属性
+-w  目前的使用者具有写的权限
+-x  目前的使用者具有执行的权限
+-z  文件或目录存在而且没有内容
+
+11.2  重要的文件相关内奸函数
+
+perl大多数都是通过底层的作业系统去操作
+
+perldoc -f -X 来查看所有的测试符号
+
+perl在处理we年句柄或其他文件的函数
+多达几十个
+
+chdir :用来切换目前工作目录
+
+chdir "D:\\Python3.8" or die $!;
+open LOG, ">log.txt" or die $!;
+print LOG "write to log\n" or die $!;
+
+
+chmod:修改文件或忙碌的额权限
+
+chmod 0444,"log.txt"
+
+$mode =0644;
+chmod $mode,'log.txt';
+
+
+注意，使用标量赋值是，perl会把指定的
+数字设定为八进位。
+chmod需要的是一个八进位数，而不是一个字符串
+
+还需要将标量转换为八进位
+
+
+$mode ='0644';chmod oct($mode),'log.txt';
+
+chown:修改文件或资料夹的拥有者
+使用者id(uid)跟群组id(gid)
+使用的方式则是将使用者id跟群组id
+利用列表的方式来描述
+配合想要修改的文件
+
+chown LIST;
+
+chown $uid,$gid,'log.txt';
+
+后面的文件可以利用列表的方式，或
+直接以数组方式。
+
+
+chown $uid,$gid, @array;
+
+直接使用数组的好处
+可以利用样式比对出象牙ode文件
+然后一次性进行信管修改
+
+ls *pl
+
+glod 可以利用上一个样式，作为比对的标准
+
+@filelist = glob "*.pl";
+
+
+可以把glob所返回的文件列表放入一个数组中
+然后字啊针对这个数组进行chown或chmod
+相关做
+@filelist = <*.pl>;
+
+上面也都是取得目录下的文件，并且依据你所描述的
+样式返回你需要的文件
+
+比如想要目录下所有的.txt文件
+
+for $file (<*.txt>) {
+open FH, $file;
+print $_ while (<FH>);
+}
+
+可以利用<>代替glob的工作
+可以同时<>也被我们拿来作为读文件内容的运算
+
+open FH,$file;
+$filehandle = "FH";
+print $_ while(<$filehandle>);
+
+
+link:需要把文件建立链接。类似ln
+
+my $res = link "/home/foo","/home/bar";
+
+link指令会有一个回传值，如果链接成功
+则回传值为真值，相反链接，则返回伪值
+
+use strict;
+my $ret = link "log.txt","log.bak";
+open FH,"log.bak" or die $! if ($ret);
+print $_ while(<FH>);
+
+
+inode这个概念会帮助链接的意义
+
+mkdir PATH
+
+
+可以通过umask来怕你当这个目录的权限
+唯一的差别只是把你希望指定的unmask放在判断的最后
+
+mkdir foo,0777
+
+
+rename 用来修改文件名称
+
+
+my $file = "message.log";
+if (-e $file){
+rename $file,"$file.old";
+}
+open FH,">&file";
+print FH,"接下来就可以写入资料";
+
+
+rename $oldfile,$newfile;
+
+使用了大于号(>)来开启文件句柄
+如果之前没有先把文件更名，那旧资料就会被取代
+
+rmdir,删除一个文件夹
+
+rmdir FILENAME;
+
+stat可以得到许多文件相关信息
+
+my @ret = stat "log.txt";
+print "$_\n" for (@ret);
+于是我们试着执行这个程序，会看到这样的结果：
+234881034   # 装置编号
+1183005   # inode 编号
+33060   # 文件模式(类型及权限)
+1   # 文件的连结数目
+501   # uid
+501   # gid
+0   # 装置辨识
+17   # 文件大小
+1078894964   # 最后读写时间
+1078894638   # 最后修改时间
+1078939576   # inode 修改的时间
+4096   # 文件读写时的区块大小
+8   # 区块的数目
+
+
+($dev,$ino,$mode,$nlink,$uid,$gid,$rdev,$size,$atime,$mtime,$ctime,$blksize,
+$blocks) = stat("log.txt");
+
+
+可以利用一个数组来存储stat的回传值，
+这样可以分辨各个值所代表的意义
+
+
+unlink:也可以删除某些文件,类似rm
+
+unlink删除时，只需要传入想要删除的文件列表。
+搭配glob或角括号<>使用，可以过滤出某些特殊的文件
+并进行删除
+
+
+my @files = <*.ccp>;
+unlink @files or die $!;
+
+untime :可以修改文件时间
+
+utime可以传入一个列表
+utime LIST
+
+utime $atime,$mtime,@files;
+
+其中第一个参数就是文件读写时间，第二个参数就是文件
+最后一次修改的时间
+
+
+11.3 localtime
+
+
+inode修改的时 10013454
+
+可以使用localtime来转换一般人可以接受而使用的信息
+
+localtime会返回一个列表，分别代表用来表示时间的
+各个栏位，
+
+@realtime = localtime($timestamp);
+只是如果你使用这样的方式，恐怕自己也很难很快的使用，所以也许可以换一个方式：
+($sec, $min, $hour, $day, $mon, $year, $wday, $yday, $isdat) =
+localtime ($timestamp);
+
+
+1. 列出目前所在位置的所有文件/资料夹名称。
+
+解答：我们可以用简单的角括号方式来取得目前目录下的所有内容。
+
+#!/usr/bin/perl -w
+use strict;
+my @files = <*>;
+print "$_\n" for @files;
+
+2. 承一，只列出资料夹名称。
+
+解答：在这里，我们只需要修改刚刚的程序，在打印前判断我们取得的是文件或资料夹。
+
+my @files = <*>;
+for (@files) {
+print "$_\n" if (-d $_);
+}
+
+3. 利用perl，把目录下所有附档名为.pl的文件修改权限为可执行。
+
+解答：首先我们还是使用角括号，但是我们这次要取出的只有所有附档名为.pl的文件。接下来，再以chmod来修改权限。
+
+my @files = <*.pl>;
+chmod 0755, @files;
+
+
+利用
