@@ -1,0 +1,45 @@
+perl ->
+
+-> 有两种用法，都和解引用有关。
+
+
+
+第一种用法，就是解引用。
+根据 -> 后面跟的符号的不同，解不同类型的引用，
+->[] 表示解数组引用，->{} 表示解散列引用，->() 表示解子程序引用。
+例子：
+$arr_ref = @array;
+$arr_ref->[0] 访问数组 @array 的第一个元素。
+$hash_ref = %hash;
+$hash_ref->{foo} 访问 %hash 的 foo 分量
+$sub_ref = &test;
+$sub_ref->(1, 2, 3) 使用参数列表 (1,2,3) 来调用 &test 这个子程序。
+
+第二种用法，就是调用类或者对象的方法。
+格式：
+$obj->method();
+或者
+ClassName->method();
+例如：
+$pop3->login( $username, $password );
+my $ftp = Net::FTP->new("some.host.name", Debug => 0);
+这两种用法略有不同，
+但是总的来说，符合以下规则：
+
+QUOTE:
+假设 -> 的左操作数（就是左边那个值，如 $pop3 和 Net::FTP）是 $left，右操作数（就是右边那个值，如 login 和 new）是 $right，那么 -> 的运算规则就是：
+
+[Copy to clipboard] [ - ]
+CODE:
+if ( ref $left 有效 ){ # 也就是说 $left 是个引用，而不是个裸字
+$ClassName = ref $left; # 取引用的类型，当作类名称
+}
+else{
+$ClassName = $left; # 直接把裸字当作类名称
+}
+
+然后调用：
+&{$ClassName::$right}( $left, 原参数列表 )
+也就是说把类名称和右操作数拼在一起，当作子程序名称（注），并把左操作数当作第一个参数。
+
+注：Perl 解释器要做的工作其实要比这复杂，它还要考虑到继承的问题。
